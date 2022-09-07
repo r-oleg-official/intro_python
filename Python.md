@@ -1,3 +1,18 @@
+## Переменные.
+
+1. `int`(integer) - целочисленные;
+2. `float` - числа с плавающей точкой;
+3. `boolean` - логические;
+4. `str`(string) - строковые;
+5. `list` - списки;
+6. и др.
+
+Example:
+
+    value = 2800
+    name = 'Oleg'
+
+
 ## Clear console.
 
     import os
@@ -7,13 +22,10 @@
 
     if 0 < x < 10:
 
-
 ## Print().
 
     print('text', varname, '- text')
     print(f'text {varname} - text')
-
-
 
 ## Codepage [UTF-8](https://www.charset.org/utf-8).
 
