@@ -1,6 +1,9 @@
 # int, float, boolean, str, list, None
 # None - уник знач-е, чтобы объявить переме-ю
 # а потом по коду в дальнейшем использовать.
+from sys import orig_argv
+
+
 value = None # но такое скорее всего не понадобиться
 a = 123     # int
 b = 1.23    # float
@@ -150,4 +153,181 @@ print(2 in f)   # True. 2-ка содержится в списке "f".
 print(not 2 in f) # False
 
 # Проверка четности числа.
+is_odd = f[0] % 2 == 0 
+print(is_odd)
+
+# Python. 0 = False. 1 = True
+is_odd = not f[0] % 2 #  f[0] % 2 = 1, not - отрицание 1-цы = 0, значит False.
+# is_odd = not f[0] % 2 - Python's view.
+print(is_odd)
+
+# if, if-else
+# if condition:
+    # operator 1
+    # ...
+    # operator n
+# else:
+    # operator n + 1
+    # ...
+    # operator n + m
+# !!! Отступы важны.
+a = int(input('a = '))
+b = int(input('b = '))
+if a > b:
+    print(a)
+else:
+    print(b)
+
+# if condition1:
+#     # operator
+# elif condition2:
+#     # operator
+# elif condition3:
+#     # operator
+# else:
+#     # operator
+username = input('Enter a name: ')
+if username == 'Маша':
+    print('Ура, это же Маша!')
+elif username == 'Марина':
+    print('Я так ждал вас, Марина')
+elif username == 'Ильнар':
+    print('Ильнар - топ)')
+else:
+    print('Привет, ', username)
+
+# Circles.
+# While. Отступы важны.
+# while condition:
+#     # operator 1
+#     # operator 2
+#     # ...
+#     # operator n
+original = 23
+inverted = 0
+while original != 0:
+    inverted = inverted * 10 + (original % 10)
+    original  //=10
+    print(original) # можно показать знач-е original на каждом этапе.
+else:
+    print('Пожалуй')
+    print('хватит )')
+print(inverted)
+
+# For
+# for i in enumeration:
+#     # operator 1
+#     # operator 2
+#     # ...
+#     # operator n
+# i - переменная "счетчик", in - после ключ слова указать 
+# итерируемый объект, например, список, но бывают разные.
+for i in 1, 2, 3, 4, 5:
+    print(i ** 2)
+
+list = [1, 2, 3, 4, 10, 5]
+for i in list:
+    print(i)
+
+r = range(10)   # выдает набор/итератор 0 - 9
+for i in range:
+    print(i)
+for i in range(10):
+    print(i)
+for i in range(1, 5):   # 1 - 4, через 1-цу
+    print(i)
+for i in range(1, 10, 2):   # 1 - 9, приращение на 2-ку
+    print(i)
+# Итерируемый может может быть строкой.
+for i in 'qwe - rty':
+    print(i)
+
+# Строки и некоторые базовые API для строк.
+text = 'съешь ещё этих мягких французких булок'
+print(len(text))                    # 39 -  кол-во символов строки
+print('ещё' in text)                # True - проверка наличия подстроки в строке
+print(text.isdigit())               # False - все ли символы числа?
+print(text.islower())               # True - все ли символы ниж регистра
+print(text.replace('ещё', 'ЕЩЁ'))   # замена подстроки в строке
+
+for c in text:
+    print(c)
+
+# Получить встроенную справку Python.
+help(text.istitle)  # text., потом см. варианты, выбрать нужный метод для изучения справки.
+help(int)
+help(str)
+
+# Строки. API. Срезы.
+text = 'съешь ещё этих мягких французких булок'
+print(text[0])                          # с - обращение к эл-ту по индексу
+print(text[1])                          # ъ
+print(text[len(text)])                  # IndexError, т.к. индексация с нуля
+print(text[len(text) - 1])              # к, индекс 0 - послед.
+print(text[-5])                         # б, -5 - отсчет индекса с конца строки
+print(text[:])                          # print(text) по умол-ю = print(text[len(text) - 1])
+print(text[:2])                         # съ, значит индекс [0:2], поэтому 0 не пишется.
+print(text[len(text) - 2:])             # ок
+print(text[2:9])                        # ешь ещё
+print(text[6:-18])                      # ещё этих мягких
+print(text[0:len(text):6])              # сеикакл
+print(text[::6])                        # сеикакл
+text = text[2:9] + text[-5] + text[:2]  # ...
+
+# Список - пронумерованная, изменяемая коллекция объектов произвольных(зачеркнуто) типов.
+numbers = [1, 2, 3, 4, 5]
+print(numbers)  # [1, 2, 3, 4, 5]
+
+ran = range(1, 6)
+print(type(ran))            # <class 'range'> - это не тип списка list.
+numbers = list(range(1, 6)) # приведение типа range к типу list
+print(numbers)  # [1, 2, 3, 4, 5]
+print(type(numbers))        # <class 'list'> - это уже коллекция "список"
+
+numbers[0] = 10
+print(len(numbers)) # получить кол-во эл-тов
+print(f'{len(numbers)} len')
+print(numbers)  # [10, 2, 3, 4, 5]
+
+for i in numbers:
+    i *= 2 # значит положить в тек перем-ю, но не в сам список!!!
+    print(i)    # [20, 4, 6, 8, 10]
+print(numbers)  # [10, 2, 3, 4, 5]
+
+# Расширенный функ-л списка.
+colors = ['red', 'green', 'blue']
+for e in colors:
+    print(e)        # red green blue
+for e in colors:
+    print(e * 2)    # redred greengreen blueblue
+colors.append('gray')   # добавление эл-та в конец списка
+print(colors == ['red', 'green', 'blue', 'gray'])   # True
+colors.remove('red')    # удалить эл-т "red"
+del colors[0] # удалить эл-т с индексом 0
+
+# Описание функции.
+# def function_name(x):
+#     # body line 1
+#     # ...
+#     # body line n
+#     # optional return     # оператор return может быть добавлен.
+def f(x):
+    if x == 1:
+        return 'Целое'
+    elif x == 2.3:
+        return 23
+    else:
+        return
+# В C# указывается тип возвр-го значения. В Python ф-ция может возвращать разные типы.
+arg = 1
+print(f(arg))
+print(type(f(arg))) # <class 'str'>
+arg = 2.3
+print(f(arg))       
+print(type(f(arg))) # <class 'int'>
+arg = 2             # указать иное значение
+print(f(arg))
+print(type(f(arg))) # <class 'NoneType'> - возвращено "ничего".
+
+
 
