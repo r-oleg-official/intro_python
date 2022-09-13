@@ -62,3 +62,7 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 4. Characters with Decomposition Mapping “Vulgar fraction form” - дроби. [см](https://www.compart.com/en/unicode/decomposition/%3Cfraction%3E) 
 
 5. List of HTML Entities [см](https://www.compart.com/en/unicode/html)
+
+
+    type(var)._ _name_ _ -  возвращает строку с типом переменной.
+     
