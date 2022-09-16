@@ -1,6 +1,5 @@
 
 
-# from random import randint
 from random import randint as rint
 
 # Idea 3.
