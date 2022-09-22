@@ -95,6 +95,6 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 
 ## Urls.
 1. [Python enumerate: упрощаем циклы с помощью счетчиков](https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08)
-2. [Генерация простых чисел](https://habr.com/ru/post/470159/)
+2. [Генерация простых чисел](https://habr.com/ru/post/470159/). [Таблица простых чисел до 1000](https://calcs.su/html/calcs/math/prime-numbers-1000.html)
 3. [Tkinter — создание графического интерфейса в Python](https://python-scripts.com/tkinter)
 
