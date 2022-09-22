@@ -13,6 +13,9 @@ s_list = [2, 3, 5, 9, 3]
 # s_list = r_list(start_list, stop_list, size_list)
 
 sum = 0
+pos_list = []
 for i in range(1, len(s_list), 2):
     sum += s_list[i]
-print(f'Summa numbers in unven positions of list = {sum}')
+    pos_list.append(s_list[i])
+print(
+    f'- {s_list} -> на нечётных позициях элементы {pos_list}. Ответ: {sum}')
