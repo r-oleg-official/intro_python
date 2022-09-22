@@ -54,6 +54,9 @@ list = [1, 2, 3]
 # col = ['hello', 1, 2, 3] # - осторожно с пробелами, например, в начале строки.
 # Ошибка: unexpected indent
 
+mylist = [x*x for x in range(3)]  # [0, 1, 4]
+
+
 # Ввод и вывод данных.
 print('Enter a')
 a = input()         # a = 10
@@ -86,7 +89,7 @@ c = a / b   # деление работает как для вещест-х чи
 print(c)
 c = a // b  # чтобы получить деление в целых числах
 print(c)
-c = a % b   # остаток оот деления
+c = a % b   # остаток от деления
 print(c)
 c = a ** b  # возведение в степенеь.
 print(c)
@@ -243,6 +246,20 @@ for i in range(1, 10, 2):   # 1 - 9, приращение на 2-ку
 # Итерируемый может может быть строкой.
 for i in 'qwe - rty':
     print(i)
+
+# Дополнение из статьи https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08
+# for index in range(len(values)):
+#     value = values[index]
+#     print(index, value)
+
+# enumerate()
+# for count, value in enumerate(values):
+#     print(count, value)
+# возвращает две переменные цикла: количество текущих итераций и значение элемента
+
+# for count, value in enumerate(values, start=1): # если начинать не с 1-го эл-та
+#     print(count, value)
+
 
 # Строки и некоторые базовые API для строк.
 text = 'съешь ещё этих мягких французких булок'
