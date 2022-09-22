@@ -19,4 +19,4 @@ def dec_to_bin(num: int) -> str:
 
 
 number = int(input('Enter a number: '))
-print(dec_to_bin(number))
+print(f'- {number} => {dec_to_bin(number)}')
