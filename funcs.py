@@ -62,6 +62,20 @@ def calc_simple_numbers(num) -> int:
     return factors
 
 
+def dec_to_bin(num: int) -> str:
+    'Convert integer number to binary.'
+    if num == 0:
+        return 0
+    bin = ""
+    while (num > 0):
+        if (num % 2 == 0):
+            bin = "0" + bin
+        else:
+            bin = "1" + bin
+        num = num // 2
+    return bin
+
+
 def game_score():
     'Game "tic-tac-toe" is drawing to console.'
     os.system('clear')
