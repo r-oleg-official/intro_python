@@ -76,6 +76,24 @@ def dec_to_bin(num: int) -> str:
     return bin
 
 
+def list_fibo(num: int) -> int:
+    'Numbers of the Fibonacchi.'
+    if num == 0:
+        return 0
+    elif num == 1:
+        return 1
+    return list_fibo(num - 1) + list_fibo(num - 2)
+
+
+def list_nega_fibo(num: int) -> int:
+    'Numbers of the NegaFibonacchi.'
+    if num == 0:
+        return 0
+    if num == 1:
+        return 1
+    return (-1) ** (num + 1) * list_fibo(num)
+
+
 def game_score():
     'Game "tic-tac-toe" is drawing to console.'
     os.system('clear')
