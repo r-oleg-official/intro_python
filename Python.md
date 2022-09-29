@@ -12,6 +12,23 @@ Example:
     value = 2800
     name = 'Oleg'
 
+Двойное присваивание:
+
+    first_elem, second_elem = (10, "a")
+
+## Boolean.
+False = 0. True = 1.
+
+
+Проверка True/False:
+
+    print(int(False))
+    print(int(True))
+
+Ну ложь это то чего нет значит 0. Так как мы работаем с предикатами в двоичной системе счисления значит противоположность 0 будет 1. Значит 1 это истина.
+
+### Предикаты. Алгебра Буля.
+Пробел в знаниях.
 
 ## Clear console.
 
@@ -26,6 +43,15 @@ Example:
 
     print('text', varname, '- text')
     print(f'text {varname} - text')
+
+## String. 
+
+### Join()
+
+    myTuple = ("John", "Peter", "Vicky")
+    x = "#".join(myTuple)
+    print(x)  # John#Peter#Vicky
+
 
 ## Codepage [UTF-8](https://www.charset.org/utf-8).
 
@@ -65,4 +91,10 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 
 
     type(var)._ _name_ _ -  возвращает строку с типом переменной.
-     
+
+
+## Urls.
+1. [Python enumerate: упрощаем циклы с помощью счетчиков](https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08)
+2. [Генерация простых чисел](https://habr.com/ru/post/470159/). [Таблица простых чисел до 1000](https://calcs.su/html/calcs/math/prime-numbers-1000.html)
+3. [Tkinter — создание графического интерфейса в Python](https://python-scripts.com/tkinter)
+
