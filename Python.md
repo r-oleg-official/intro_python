@@ -92,6 +92,15 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 
     type(var)._ _name_ _ -  возвращает строку с типом переменной.
 
+## GUI in Python.
+
+FM:
+1. Kivi
+2. PyQt
+3. PyGUI
+4. TKinter. Якобы пердустановлен в Python, хотя на Linux утс-ть отдельно `python3.10-tk`. Подробная док-ция. Подойдет для быстрой зарисовки проекта, красота не главное. 
+
+
 
 ## Urls.
 1. [Python enumerate: упрощаем циклы с помощью счетчиков](https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08)
