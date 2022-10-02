@@ -93,6 +93,21 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
     type(var)._ _name_ _ -  возвращает строку с типом переменной.
 
 
+## Rules in Python.
+[Python с нуля | if __name__ == '__main__' | Зачем? И почему нужно использовать](https://youtu.be/houlvw937fg).
+
+    def main():
+        'Organize work of our programm'
+        return requests.get(url='https://google.com')
+
+
+    if __name__ == '__main__':
+        'It's begin start of a project.'
+        main()
+
+
+Это паттерное проектрирование. Описать с начала ф-ции, а в конце описать так ф-цию `main`. Это должно облегчить чтение кода.
+
 ## Urls.
 1. [Python enumerate: упрощаем циклы с помощью счетчиков](https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08)
 2. [Генерация простых чисел](https://habr.com/ru/post/470159/). [Таблица простых чисел до 1000](https://calcs.su/html/calcs/math/prime-numbers-1000.html)
