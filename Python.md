@@ -92,6 +92,15 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 
     type(var)._ _name_ _ -  возвращает строку с типом переменной.
 
+## GUI in Python.
+
+FM:
+1. Kivi
+2. PyQt
+3. PyGUI
+4. TKinter. Якобы пердустановлен в Python, хотя на Linux утс-ть отдельно `python3.10-tk`. Подробная док-ция. Подойдет для быстрой зарисовки проекта, красота не главное. 
+
+
 
 ## Rules in Python.
 [Python с нуля | if __name__ == '__main__' | Зачем? И почему нужно использовать](https://youtu.be/houlvw937fg).
