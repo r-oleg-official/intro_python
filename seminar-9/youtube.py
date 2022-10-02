@@ -70,5 +70,12 @@ exit()
 # yt.streams.order_by('resolution').desc()
 # yt = yt.streams[0].download()
 
+# Download the best video before 720p.
+# video = streams.filter(progressive=True).desc().first()
+
 # Print number of the resolution
 # print(yt.filter(type='video').get_by_resolution(resolution='720p').resolution[0:-1]) # 720
+# yt.streams.filter(type='video').get_highest_resolution().resolution[0:-1] # print high resolution
+
+# Merge video and soundtrack for 1080 and high on Linux
+# ffmpeg -i video.webm -i audio.webm -map 0:v -map 1:a -c copy out.webm
