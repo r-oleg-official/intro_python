@@ -92,15 +92,43 @@ Degree Celsius: `\u2103`. Degree Fahrenheit: `\u2109`
 
     type(var)._ _name_ _ -  возвращает строку с типом переменной.
 
+## Venv of Python.
+### VSCode on Linux.
+Терминал VSC:
+
+    $ python3 -m venv .venv
+    $ source .venv/bin/activate - activate virtual machine Python
+
+В строке состояния VSC, выбрать пункт интерпретатора: "+ Введите путь к интерпретатору" -> "Найти:" - для поиска в файловом менеджере. Искать в каталоге проекта `.venv/bin/python3`. И так для каждого проекта.
+
+Терминал VSC, открытый в проекте работает некорректно, поэтому можно добавить алиас в `$HOME/.bashrc`:
+
+    alias python3="/path_to_project/.venv/bin/python"   - for the project start
+    alias python="/usr/bin/python3.10"                  - for global start
+
+## PIP of Python.
+
+    $ pip3 install <name_biblio>        - install a module of the Python
+    $ pip3 uninstall <name_biblio>      - deinstall a module
+    $ pip3 list                         - list installed the modules
+    $ pip3 freeze                       - list installed the modules
+    $ pip3 freeze > requirements.txt    - create file with list installed modules, example, venv
+    $ pip3 install -r requirements.txt  - install neadly modules in new project, example, venv
+
+> С помощью команд `pip3 freeze > requirements.txt` и 
+> `pip3 install -r > requirements.txt` удобно передавать/переносить проект 
+> с одной машины на другую, или между разработчиками. 
+
+> Копирование каталога `.venv` не позволит запустить проект в др. вирт окружении Python.
+> Для передачи достаточно сами модули `*.py` и `requirements.txt`.
+
 ## GUI in Python.
 
-FM:
+FW:
 1. Kivi
 2. PyQt
 3. PyGUI
 4. TKinter. Якобы пердустановлен в Python, хотя на Linux утс-ть отдельно `python3.10-tk`. Подробная док-ция. Подойдет для быстрой зарисовки проекта, красота не главное. 
-
-
 
 ## Rules in Python.
 [Python с нуля | if __name__ == '__main__' | Зачем? И почему нужно использовать](https://youtu.be/houlvw937fg).
@@ -114,11 +142,10 @@ FM:
         'It's begin start of a project.'
         main()
 
-
 Это паттерное проектрирование. Описать с начала ф-ции, а в конце описать так ф-цию `main`. Это должно облегчить чтение кода.
 
 ## Urls.
 1. [Python enumerate: упрощаем циклы с помощью счетчиков](https://proglib.io/p/python-enumerate-uproshchaem-cikly-s-pomoshchyu-schetchikov-2020-12-08)
 2. [Генерация простых чисел](https://habr.com/ru/post/470159/). [Таблица простых чисел до 1000](https://calcs.su/html/calcs/math/prime-numbers-1000.html)
 3. [Tkinter — создание графического интерфейса в Python](https://python-scripts.com/tkinter)
-
+4. [Download a video from YouTube with Pytube](https://pytube.io/en/latest/user/quickstart.html)
