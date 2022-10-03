@@ -41,6 +41,8 @@ path = 'download'
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
 res.download(path)
+video_best = yt.str
+order_by('resolution').desc().first()
 
 exit()
 
