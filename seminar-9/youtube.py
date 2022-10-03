@@ -1,4 +1,4 @@
-from pytube import YouTube 
+from pytube import YouTube
 from pytube.cli import on_progress
 
 
@@ -11,7 +11,7 @@ def list_res(url) -> str:
             k = yt.filter(res=i).desc().first().resolution[0:-1]
         except:
             k = None
-        if k != None: 
+        if k != None:
             result += k + ' '
     return result + 'audio'
 
@@ -34,9 +34,9 @@ def choice_res(url: str):
 
 
 url = 'https://youtu.be/NsaouJxIbPA'
-# url = user_input('url')
+# url = user_input('Enter url: ')
 path = 'download'
-# path = user_input('path to download catalog')
+# path = user_input('path to download catalog: ')
 
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
