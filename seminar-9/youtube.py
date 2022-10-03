@@ -37,7 +37,6 @@ url = 'https://youtu.be/NsaouJxIbPA'
 # url = user_input('Enter url: ')
 path = 'download'
 # path = user_input('path to download catalog: ')
-
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
 res.download(path)
@@ -53,7 +52,7 @@ exit()
 
 # Download v.2.
 # streams = pytube.YouTube(url).streams
-# video_best = streams.order_by('resolution').desc().first()
+# video_best = yt.get_highest_resolution().download()
 # video = streams.order_by('resolution').desc()
 # video_480 = streams.filter(res='480p').desc().first()
 # audio_best = streams.filter(only_audio=True).desc().first()
