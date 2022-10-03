@@ -149,3 +149,8 @@ FW:
 2. [Генерация простых чисел](https://habr.com/ru/post/470159/). [Таблица простых чисел до 1000](https://calcs.su/html/calcs/math/prime-numbers-1000.html)
 3. [Tkinter — создание графического интерфейса в Python](https://python-scripts.com/tkinter)
 4. [Download a video from YouTube with Pytube](https://pytube.io/en/latest/user/quickstart.html)
+5. [Как проверить существование файла?](https://ru.stackoverflow.com/questions/414593/%D0%9A%D0%B0%D0%BA-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C-%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0)
+6. [Вынести путь папки в переменную в Python](https://ru.stackoverflow.com/questions/490672/%d0%92%d1%8b%d0%bd%d0%b5%d1%81%d1%82%d0%b8-%d0%bf%d1%83%d1%82%d1%8c-%d0%bf%d0%b0%d0%bf%d0%ba%d0%b8-%d0%b2-%d0%bf%d0%b5%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d0%bd%d1%83%d1%8e-%d0%b2-python?noredirect=1&lq=1)
+7. [Sqlite3 Как проверить существование записи?](https://ru.stackoverflow.com/questions/1427936/sqlite3-%d0%9a%d0%b0%d0%ba-%d0%bf%d1%80%d0%be%d0%b2%d0%b5%d1%80%d0%b8%d1%82%d1%8c-%d1%81%d1%83%d1%89%d0%b5%d1%81%d1%82%d0%b2%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b7%d0%b0%d0%bf%d0%b8%d1%81%d0%b8?rq=1)
+8. [python-telegram-bot. doc](https://docs.python-telegram-bot.org/en/v20.0a4/)
+9. 
