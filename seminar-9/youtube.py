@@ -37,12 +37,9 @@ url = 'https://youtu.be/NsaouJxIbPA'
 # url = user_input('Enter url: ')
 path = 'download'
 # path = user_input('path to download catalog: ')
-
 yt = YouTube(url, on_progress_callback=on_progress).streams
-video_best = yt.get_highest_resolution().download()
-
-# res = choice_res(url)
-# res.download(path)
+res = choice_res(url)
+res.download(path)
 
 exit()
 
