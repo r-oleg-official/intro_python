@@ -3,6 +3,7 @@
 #   при $d = 0.001, π = 3.141
 
 from math import pi
+import decimal as dec
 # Method Leibnicza.
 # pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15)...
 
@@ -16,10 +17,40 @@ def calc_pi_laybnitcz(count_number: int):
     return number_pi
 
 
+def calc_pi_nilakanta(list_divisors):
+    'Нилаканта. '
+    # π = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - (4/(12*13*14)
+    number_pi = 3
+    # print(list_divisors)
+    for i in range(len(list_divisors), 2):
+        number_pi += 4 / list_divisors[i]
+    for i in range(1, len(list_divisors), 2):
+        number_pi -= 4 / list_divisors[i]
+    return number_pi
+
+
+def calc_divisor(count_number: int):
+    divisor_list = []
+    start_number = 2
+    while start_number < count_number + 1:
+        tmp = start_number
+        for i in range(start_number + 1, start_number + 3):
+            tmp *= i
+        start_number += 2
+        divisor_list.append(tmp)
+    return divisor_list
+
+
+
 # count_iteration = int(input('Enter count iterations: '))
-count_iteration = 10000000000000000 # 1 mln
+count_iteration = 10000000 # 1 mln
 my_pi = calc_pi_laybnitcz(count_iteration)
 print(pi)
+print(my_pi)
+
+divisors = calc_divisor(count_iteration)
+my_pi = calc_pi_nilakanta(divisors)
+# print(pi)
 print(my_pi)
 
 
