@@ -6,6 +6,12 @@
 4. `str`(string) - строковые;
 5. `list` - списки;
 6. и др.
+7. `decimal` [см](https://docs.python.org/3.10/library/decimal.html): <br>
+
+    `from decimal import *`
+
+    `number = Decimal(number)`
+
 
 Example:
 
