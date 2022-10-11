@@ -148,7 +148,7 @@ print(type(t))  # tuple
 colors = ['red', 'green', 'blue']
 print(colors)   # ['red', 'green', 'blue']
 t = tuple(colors)
-print(t)  # 'red', 'green', 'blue')
+print(t)  # ('red', 'green', 'blue')
 
 t = tuple(['red', 'green', 'blue'])
 print(t[0])     # red
