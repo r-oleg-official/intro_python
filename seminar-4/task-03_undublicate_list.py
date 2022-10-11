@@ -24,37 +24,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-exit(0)
-
-
-def main():
-    s_list = [1, 1, 2, 3, 4, 5, 5]
-    # s_list = list(map(int,(input('Enter a numbers in string: 1 2 3... ').split())))
-    res_list = s_list[:]
-    for i in range(len(s_list)):
-        if list_counter_number(s_list, s_list[i]) > 1: res_list.remove(s_list[i])
-    print(res_list)
-
-
-
-
-
-def main():
-    s_list = [1, 1, 2, 3, 4, 5, 5]
-    # s_list = list(map(int,(input('Enter a numbers in string: 1 2 3... ').split())))
-    res_list = []
-    # res_list = s_list[:]
-    i = 0
-    while i < len(s_list):
-        # res_list = []
-        tmp = s_list[i]
-        j = 0
-        while j < len(s_list):
-            if res_list[j] == tmp:
-                res_list.append(s_list[j])
-            j += 1
-        # res_list.append(s_list[i])
-        i += 1
-    print(res_list)
-# print(main())
