@@ -20,8 +20,8 @@ def create_polinom(factor_list: int, degree: int, result: str) -> str:
     return create_polinom(factor_list, degree - 1, result)
 
 
-def save_to_file(str_line: str):
-    with open('polinom.txt', 'w') as data:
+def save_to_txt(file: str, str_line: str):
+    with open(file, 'w') as data:
         data.write(str_line)
 
 
@@ -32,7 +32,7 @@ def main():
     polinom = create_polinom(k_list, n, polinom)[1:]
     if k_list[0] != 0:
         polinom += '+' + str(k_list[0]) + '=0'
-    save_to_file(polinom)
+    save_to_txt('polinom.txt', polinom)
 
 
 if __name__ == "__main__":
