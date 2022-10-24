@@ -40,8 +40,7 @@ path = 'download'
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
 res.download(path)
-video_best = yt.str
-order_by('resolution').desc().first()
+video_best = yt.order_by('resolution').desc().first()
 
 exit()
 
@@ -79,4 +78,5 @@ exit()
 # yt.streams.filter(type='video').get_highest_resolution().resolution[0:-1] # print high resolution
 
 # Merge video and soundtrack for 1080 and high on Linux
-# ffmpeg -i video.webm -i audio.webm -map 0:v -map 1:a -c copy out.webm
+# ffmpeg -i video.mp4 -i audio.webm -map 0:v -map 1:a -c copy out.mkv
+# ffmpeg -i video.mp4 -i audio.webm -sctrict -2 -map 0:v -map 1:a -c copy out.mp4
