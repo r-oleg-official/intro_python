@@ -4,25 +4,13 @@
 # ¬ - \u00AC - not sign
 # print('\u2228 - or, \u2227 - and, \u00AC - not sign')
 
-
-def checkPredicates(startNumber: int, endNumber: int):
-    for i in range(startNumber, endNumber + 1):
-        x = i
-        for j in range(startNumber, endNumber + 1):
-            y = j
-            for k in range(startNumber, endNumber + 1):
-                z = k
-                if not(x or y or z) == (not (x) and not (y) and not (z)):
-                    # print(f'X= {x}, Y= {y}, Z= {z}')
-                    print(f'{x}\t {y}\t {z}\t')
-
-
-def main():
-    startNumber = int(input('Введите начальное значение для X, Y, Z: '))
-    endNumber = int(input('Введите конечное значение для X, Y, Z: '))
-    print(f"X \tY \tZ")
-    checkPredicates(startNumber, endNumber)
-
-
-if __name__ == "__main__":
-    main()
+xyz = [True, False]
+print(f'X\t Y\t Z\t')
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            left = not (xyz[i] or xyz[j] or xyz[k])
+            right = not(xyz[i]) and (not (xyz[j])) and (not (xyz[k]))
+            if left == right == True: 
+                print(f'{xyz[i]}\t {xyz[j]}\t {xyz[k]}\t')
+   
