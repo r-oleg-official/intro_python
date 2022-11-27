@@ -4,13 +4,12 @@
 # ¬ - \u00AC - not sign
 # print('\u2228 - or, \u2227 - and, \u00AC - not sign')
 
-xyz = [True, False]
+#xyz = [True, False]
 print(f'X\t Y\t Z\t')
-for i in range(2):
-    for j in range(2):
-        for k in range(2):
-            left = not (xyz[i] or xyz[j] or xyz[k])
-            right = not(xyz[i]) and (not (xyz[j])) and (not (xyz[k]))
-            if left == right == True: 
-                print(f'{xyz[i]}\t {xyz[j]}\t {xyz[k]}\t')
-   
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            left = not(x or y or z)
+            right = (not(x)) and (not(y)) and (not(z))
+            if left == right: 
+                print(f'{x}\t {y}\t {z}\t')
