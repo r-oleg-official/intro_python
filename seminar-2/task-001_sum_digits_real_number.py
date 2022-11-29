@@ -3,7 +3,7 @@
 # - 0,56 -> 11
 
 num = float(input('Enter a number: '))
-arr = str(num).split('.')
+arr = str(num).split(',')
 sum = 0
 for i in arr:
     for j in i:
