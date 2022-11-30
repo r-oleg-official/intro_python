@@ -1,4 +1,4 @@
-
+# Реализуйте алгоритм перемешивания списка.
 
 from random import randint as rint
 

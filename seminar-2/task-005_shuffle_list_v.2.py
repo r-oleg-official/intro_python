@@ -4,8 +4,8 @@ import list_funcs as l_func
 
 
 def choice_type_list():
-    quest = int(input('Choice type list: 1 or 2, (default 1: [1, 2,...,n]): '))
-    if quest == 1:
+    choice = int(input('How are fill of the list: 1 or 2, (default 1: [1, 2,...,n]): '))
+    if choice == 1:
         return list(range(size_list))
     else:
         begin_number = int(input('Enter a first number of list: '))
