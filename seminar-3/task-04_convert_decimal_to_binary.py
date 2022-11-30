@@ -14,7 +14,7 @@ def dec_to_bin(num: int) -> str:
             bin = "0" + bin
         else:
             bin = "1" + bin
-        num = num // 2
+        num //= 2
     return bin
 
 
