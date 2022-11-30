@@ -2,10 +2,10 @@
 # Пример:
 # - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-import factorial as fact
-
 n = int(input('Enter a number N: '))
+fact = 1
 num_list = []
 for i in range(1, n + 1):
-    num_list.append(fact(i))
+    fact *= i
+    num_list.append(fact)
 print(num_list)
