@@ -2,20 +2,19 @@
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-s_list = [1.1, 1.2, 3.1, 5, 10.01]
-# s_list = [1.1, 1.2, 3.1, 10.01]
-s_list = list(map(float, s_list))
+source_list = [1.1, 1.2, 3.1, 5, 10.01]
+source_list = list(map(float, source_list))
 
 # Ver.2.0. Uncorrected.
 max, min = 0, 0
-min, max = s_list[0], s_list[0]
-for i in s_list:
+min, max = source_list[0], source_list[0]
+for i in source_list:
     i -= i // 1
     if i < min:
         min = i
     if i > max:
         max = i
-print(s_list)
+print(source_list)
 print(max, min)
 print(round((max - min), 3))
 
