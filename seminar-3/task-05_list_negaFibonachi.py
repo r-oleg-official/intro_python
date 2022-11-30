@@ -30,4 +30,4 @@ while (count <= number):
     nega_fib.append(list_nega_fibo(count))
     count += 1
 
-print(f'k = {number}, список будет выглядеть так: {nega_fib[::-1] + fib}')
+print(f'Для k = {number}, список будет выглядеть так: {nega_fib[::-1] + fib}')
