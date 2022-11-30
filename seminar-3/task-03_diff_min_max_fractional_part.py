@@ -6,7 +6,7 @@ source_list = [1.1, 1.2, 3.1, 10.01]
 source_list = list(map(float, source_list))
 
 # min, max = s_list[0], s_list[0] # - don't work
-min, max = 0.1, 0.1
+min, max = 0.1, 0
 
 for i in source_list:
     tmp = float("0." + str(i).split(".").pop())
@@ -14,5 +14,4 @@ for i in source_list:
         max = tmp
     elif tmp < min:
         min = tmp
-print(max, min)
 print(f'{source_list} => {max - min}')
