@@ -33,8 +33,8 @@ def choice_res(url: str):
                 return
 
 
-url = 'https://youtu.be/NsaouJxIbPA'
-# url = user_input('Enter url: ')
+# url = 'https://youtu.be/NsaouJxIbPA'
+url = input('Enter url: ')
 path = 'download'
 # path = user_input('path to download catalog: ')
 yt = YouTube(url, on_progress_callback=on_progress).streams
