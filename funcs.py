@@ -111,3 +111,19 @@ def game_win_score():
         print(' ' + ' | '.join([('\033[32m'+board[i, y]+'\033[0m' if (i, y)
               in win_combination else board[i, y]) for y in range(1, 4)]))
         print('----------- ')
+
+
+# Check string list - is digits?
+def check_str_is_digit():
+    [x for x in mylist if x.isdigit()]
+
+from ast import literal_eval
+def solve(lis):
+    for x in lis:
+        try:
+            literal_eval(x)
+            return True
+        except ValueError:   
+             return False
+mylist=['1','orange','2','3','4','apple', '1.5', '2.6', '1+0j']
+[x for x in mylist if solve(x)]
