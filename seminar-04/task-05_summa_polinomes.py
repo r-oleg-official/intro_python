@@ -10,7 +10,6 @@ def read_file(path: str):
 
 def write_to_file(path: str, li: list):
     data = f'{li[0][1]}x^{li[0][0]}'
-
     for i in range(1, len(li) - 1):
         if li[i][1] > 0:
             data += f'+{li[i][1]}x^{li[i][0]}'
@@ -33,7 +32,6 @@ def write_to_file(path: str, li: list):
 def write_to_file_for_Slava(path: str, li: list):
     """ Format style: 8*(x**4) + 9*(x**3) + 1*(x**2) + 5*x + 4 = 0"""
     data = f'{li[0][1]}*(x**{li[0][0]})'
-
     for i in range(1, len(li) - 1):
         if li[i][1] > 0:
             data += f' + {li[i][1]}*(x**{li[i][0]})'
@@ -75,7 +73,6 @@ def parse_str(line: str) -> list:
 
     li = list(filter(None, li))
     members = []
-
     for item in li:
         tmp = list(map(int, item.split('x^')))
         if len(tmp) == 1:
@@ -86,10 +83,8 @@ def parse_str(line: str) -> list:
 
 def find_max_degree(li_1: list, li_2: list) -> int:
     max_degree = li_1[0][1]
-
     for i in range(len(li_1)):
         if li_1[i][1] > max_degree: max_degree = li_1[i][1]
-
     for i in range(len(li_2)):
         if li_2[i][1] > max_degree: max_degree = li_2[i][1]
     return max_degree
@@ -98,7 +93,6 @@ def find_max_degree(li_1: list, li_2: list) -> int:
 def add_lost_element(li: list, degree: int) -> list:
     full_indexes = [x for x in range(degree + 1)][::-1]
     li_indexes = []
-
     for item in li:
         li_indexes.append(item[1])
 
@@ -116,7 +110,6 @@ def sum_polynomials(li_1: list, li_2: list) -> list:
         for j in li_2:
             if i[1] == j[1]:
                 res_polynomial.append(tuple([i[1], i[0] + j[0]]))
-
     for item in res_polynomial:
         if item[1] == 0: res_polynomial.remove(item)
 
