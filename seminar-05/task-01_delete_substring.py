@@ -6,6 +6,11 @@ def read_file(path: str) -> list:
     return data
 
 
+def write_file(path: str, line: str):
+    with open(path, 'w') as file:
+        file.writelines(line)
+
+
 def delete_word_with_substring_v1(line: str, sub_str: str) -> str:
     li = line.split()
     li_res = li[:]
@@ -30,14 +35,10 @@ def delete_word_with_substring_v2(line: str, sub_str: str) -> str:
 
 
 def main():
-    source_string = 'Я люблю абвЖвау иабв Питон'
-    delete_string = 'абв'
-    print('v.1', delete_word_with_substring_v1(source_string, delete_string))
-    print('v.2', delete_word_with_substring_v2(source_string, delete_string))
-    path_to_file = 'source_file.txt'
-    source_string = read_file(path_to_file)
-    print(source_string)
-    print('v.1', delete_word_with_substring_v1(source_string[0], source_string[1]))
+    path_to_source = 'source_file.txt'
+    path_to_result = 'result_file.txt'
+    source_string = read_file(path_to_source)
+    write_file(path_to_result, delete_word_with_substring_v1(source_string[0], source_string[1]))
 
 
 if __name__ == '__main__':
