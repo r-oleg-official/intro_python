@@ -81,6 +81,16 @@ def made_step(board: list, letter: str, cell: int):
                 (board[3] == letter and board[6] == letter and board[9] == letter))
 
 
+def copy_board_bot(board: list) -> list:
+    """Copy board for calc step of the bot."""
+    return board.copy()
+
+
+def is_cell_free(board: list, cell: int) -> bool:
+    """Check step. Cell is a free?"""
+    return board[cell] == ' '
+
+
 # Controller
 def cont():
     # os.system('cls||clear') # in pycharm don't work.
