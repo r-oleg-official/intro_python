@@ -112,7 +112,7 @@ def step_player(board: list) -> int:
     return int(cell)
 
 
-def random_step_bot(board: list, steps_li: list):
+def random_step_bot(board: list, steps_li: list) -> int:
     """Random step by bot."""
     variable_li = []
     for item in steps_li:
@@ -125,7 +125,7 @@ def random_step_bot(board: list, steps_li: list):
         return None
 
 
-def step_bot(board: list, bot_letter: str):
+def step_bot(board: list, bot_letter: str) -> str:
     """Brain of the bot."""
     # Definition of a bot's letter
     if bot_letter == 'X':
