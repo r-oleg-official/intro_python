@@ -49,7 +49,7 @@ def draw_board(board: list):
 
 
 # Database
-mode = ['| 2 - Player vs PC     |']
+mode = ['| 2 - Player vs PC     |', '| 4 - Exit game        |']
 mode2 = ['| 1 - Player vs Player |', '| 2 - Player vs PC     |', '| 3 - PC vs PC         |', '| 4 - Exit game        |']
 
 # Winner's combo
@@ -243,9 +243,6 @@ def cont():
             # Bot vs Bot
             mortal_kombat_begin('Бот-1', 'Бот-2')
         case 4:
-            exit(0)
-        case 5:
-            print(choice_letter())
             exit(0)
 
 
