@@ -48,22 +48,6 @@ def draw_board(board: list):
     print('-------------')
 
 
-# Database
-mode = ['| 2 - Player vs PC     |', '| 4 - Exit game        |']
-mode2 = ['| 1 - Player vs Player |', '| 2 - Player vs PC     |', '| 3 - PC vs PC         |', '| 4 - Exit game        |']
-
-# Winner's combo
-#            0      1      2      3      4      5      6      7      8      9
-board_1 = ['   ', ' X ', '   ', '   ', '   ', ' X ', '   ', '   ', '   ', ' X ']
-board_2 = ['   ', '   ', '   ', ' X ', '   ', ' X ', '   ', ' X ', '   ', '   ']
-board_3 = ['   ', ' X ', ' X ', ' X ', '   ', '   ', '   ', '   ', '   ', '   ']
-board_4 = ['   ', '   ', '   ', '   ', ' X ', ' X ', ' X ', '   ', '   ', '   ']
-board_5 = ['   ', '   ', '   ', '   ', '   ', '   ', '   ', ' X ', ' X ', ' X ']
-board_6 = ['   ', ' X ', '   ', '   ', ' X ', '   ', '   ', ' X ', '   ', '   ']
-board_7 = ['   ', '   ', ' X ', '   ', '   ', ' X ', '   ', '   ', ' X ', '   ']
-board_8 = ['   ', '   ', '   ', ' X ', '   ', '   ', ' X ', '   ', '   ', ' X ']
-
-
 # Logic
 def request_first_step(player1: str, player2: str) -> str:
     """Who is made first step?"""
@@ -72,8 +56,9 @@ def request_first_step(player1: str, player2: str) -> str:
     elif player2 == 'Бот':
         player2 = 'Бот-2'
 
-    print(f'Кто ходит первым: {player1}, или {player2}?')
-    if randint(0, 1) == 0: return player2
+    # print(f'Кто ходит первым: {player1}, или {player2}?')
+    if randint(0, 1) == 0:
+        return player2
     return player1
 
 
@@ -104,11 +89,11 @@ def is_cell_free(board: list, cell: int) -> bool:
     return board[cell] == ' '
 
 
-def step_player(board: list) -> int:
+def step_player(board: list, player) -> int:
     """Player is input next step."""
     cell = ''
     while cell not in '1 2 3 4 5 6 7 8 9'.split() or not is_cell_free(board, int(cell)):
-        cell = input("Введите номер клетки (1-9) --> ")
+        cell = input(f'{player} введите номер клетки (1-9) --> ')
     return int(cell)
 
 
@@ -179,8 +164,11 @@ def mortal_kombat_begin(player1: str, player2: str):
         while mortal_kombat:
             if who == player1:
                 # Step player-1
-                draw_board(game_board)
-                step = step_player(game_board)
+                if 'Бот' in player1:
+                    step = step_bot(game_board, player2_letter)
+                else:
+                    draw_board(game_board)
+                    step = step_player(game_board, player1)
                 made_step(game_board, player1_letter, step)
 
                 if is_winner(game_board, player1_letter):
@@ -196,7 +184,11 @@ def mortal_kombat_begin(player1: str, player2: str):
                         who = player2
             else:
                 # Step player-2
-                step = step_bot(game_board, player2_letter)
+                if 'Бот' in player2:
+                    step = step_bot(game_board, player2_letter)
+                else:
+                    draw_board(game_board)
+                    step = step_player(game_board, player2)
                 made_step(game_board, player2_letter, step)
 
                 if is_winner(game_board, player2_letter):
@@ -226,8 +218,6 @@ def cont():
     match mode_game:
         case 1:
             # Player vs Player
-            print('Данный режим в разработке.\nНужна логика смены поля между игроками.')
-            exit(0)
             # os.system('cls||clear')  # in pycharm don't work.
             os.system('printf "\033[2J"')  # clear console PyCharm
             name_player_1 = input_name_player('первого')
@@ -241,6 +231,8 @@ def cont():
             mortal_kombat_begin(name_player, 'Бот')
         case 3:
             # Bot vs Bot
+            # os.system('cls||clear')  # in pycharm don't work.
+            os.system('printf "\033[2J"')  # clear console PyCharm
             mortal_kombat_begin('Бот-1', 'Бот-2')
         case 4:
             exit(0)
@@ -249,6 +241,9 @@ def cont():
 def main():
     cont()
 
+
+mode = ['| 1 - Player vs Player |', '| 2 - Player vs PC     |', '| 3 - PC vs PC         |',
+        '| 4 - Exit game        |']
 
 if __name__ == "__main__":
     main()
