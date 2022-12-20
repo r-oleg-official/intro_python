@@ -10,7 +10,7 @@ from random import randint
 def request_mode_game(mode):
     """Choice a mode game."""
     print(" ------------------------")
-    print("| Mode:                |")
+    print("| Mode:                  |")
     for item in mode:
         print(item)
     print(" ------------------------")
@@ -29,9 +29,9 @@ def draw_board(board: list, player1: str, player2: str):
     #         for j in range(4 - len(board[i])):
     #             board[i] = " " + board[i]
     print("  ---------------------------")
-    print(f'| Счет игрока {player1}: \t{str(board[0])} |')
+    print(f'| Счет игрока {player1}: \t{str(board[0])} \t|')
     print("  ---------------------------")
-    print(f'| Счет игрока {player2}: \t{str(board[1])} |')
+    print(f'| Счет игрока {player2}: \t{str(board[1])} \t|')
     print("  ---------------------------")
     print(f'| Осталось конфет: \t{str(board[2])} |')
     print("  ---------------------------")
@@ -61,7 +61,9 @@ def first_step() -> int:
 def step_player(board: list, step: int) -> int:
     tmp = step
     if board[2] < step: tmp = board[2]
-    count = input(f'Взять конфет (1 - {tmp}): ')
+    count = ""
+    while count == '':
+        count = input(f'Взять конфет (1 - {tmp}): ')
     while (int(count) < 1) or (int(count) > tmp):
         count = input(f'Ошибка! Взять можно до {tmp} конфет:')
     return int(count)
@@ -83,7 +85,6 @@ def step_bot_hard(board: list, step: int) -> int:
 def start_game(player1: str, player2: str, candy: int, mode_bot: int):
     # [0] - player-1, [1] - player-2, [2] - score
     board = [0, 0, candy]
-    draw_board(board, player1, player2)
     who = first_step()
     in_game = True
 
@@ -91,49 +92,52 @@ def start_game(player1: str, player2: str, candy: int, mode_bot: int):
         match who:
             case 1:
                 # Step player-1
+                draw_board(board, player1, player2)
                 if 'Бот' not in player1:
                     print_step(player1)
                     board[0] += step_player(board, max_step)
+                    board[2] -= board[1] - board[0]
                 if 'Бот' in player1:
                     if mode_bot == 1:
                         board[0] += step_bot_norm(board, max_step)
                     if mode_bot == 2:
                         board[0] += step_bot_hard(board, max_step)
                 board[2] -= board[0]
-                if board[2] <= 1:
+                if board[2] < 1:
                     draw_board(board, player1, player2)
                     print_winner(player1)
-                    # in_game = False
-                    return
-                who = 2
-
+                    in_game = False
             case 2:
                 # Step player-2
+                draw_board(board, player1, player2)
                 if 'Бот' not in player2:
                     print_step(player2)
                     board[1] += step_player(board, max_step)
+                    board[2] -= board[1] - board[0]
                 if 'Бот' in player2:
                     if mode_bot == 1:
-                        board[1] += step_bot_norm(board, max_step)
+                        print_step(player2)
+                        step_bot = step_bot_norm(board, max_step)
+                        print(f'Step {player2} = {step_bot}')
+                        board[1] += step_bot
+                        board[2] -= board[1] - board[0]
                     if mode_bot == 2:
                         board[1] += step_bot_hard(board, max_step)
-                board[2] -= board[1]
-                if board[2] <= 1:
+                if board[2] < 1:
                     draw_board(board, player1, player2)
                     print_winner(player2)
-                    #in_game = False
-                    return
-                who = 1
-        draw_board(board, player1, player2)
+                    in_game = False
+        if who == 1: who = 2
+        else: who = 1
     return
 
 
 def controller():
     # os.system('cls||clear')  # in pycharm don't work.
     os.system('printf "\033[2J"')  # clear console PyCharm
-    print(" -----------------------")
-    print(f'| Игра {candy} конфета(ы). |')
-    print(" -----------------------")
+    print(" ------------------------")
+    print(f'| Игра {candy} конфета(ы).  |')
+    print(" ------------------------")
 
     mode_game = request_mode_game(mode)
     match mode_game:
@@ -166,8 +170,8 @@ def main():
 
 mode = ['| 1 - Player vs Player   |', '| 2 - Player vs PC(Norm) |', '| 3 - Player vs PC(Hard) |',
         '| 4 - Exit game          |']
-candy = int(100)  # a numbers of candies in the game.
-max_step = int(28)  # a maximum number to get candy once time.
+candy = 120  # a numbers of candies in the game.
+max_step = 28  # a maximum number to get candy once time.
 
 if __name__ == '__main__':
     main()
