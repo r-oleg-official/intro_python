@@ -52,7 +52,7 @@ def print_winner(name_player: str):
 
 def first_step() -> int:
     choice = randint(1, 2)
-    if choice == 0:
+    if choice == 1:
         return 1
     else:
         return 2
