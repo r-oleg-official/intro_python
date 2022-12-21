@@ -69,7 +69,7 @@ def step_player(board: list, step: int) -> int:
     return int(count)
 
 
-def step_bot_norm(board: list, step: int) -> int:
+def step_bot_easy(board: list, step: int) -> int:
     if board[2] > step:
         return randint(1, step)
     return randint(1, board[2])
@@ -99,7 +99,7 @@ def start_game(player1: str, player2: str, candy: int, mode_bot: int):
                     board[2] -= board[1] - board[0]
                 if 'Бот' in player1:
                     if mode_bot == 1:
-                        board[0] += step_bot_norm(board, max_step)
+                        board[0] += step_bot_easy(board, max_step)
                     if mode_bot == 2:
                         board[0] += step_bot_hard(board, max_step)
                 board[2] -= board[0]
@@ -117,7 +117,7 @@ def start_game(player1: str, player2: str, candy: int, mode_bot: int):
                 if 'Бот' in player2:
                     if mode_bot == 1:
                         print_step(player2)
-                        step_bot = step_bot_norm(board, max_step)
+                        step_bot = step_bot_easy(board, max_step)
                         print(f'Step {player2} = {step_bot}')
                         board[1] += step_bot
                         board[2] -= board[1] - board[0]
@@ -170,7 +170,7 @@ def main():
 
 mode = ['| 1 - Player vs Player   |', '| 2 - Player vs PC(Norm) |', '| 3 - Player vs PC(Hard) |',
         '| 4 - Exit game          |']
-candy = 120  # a numbers of candies in the game.
+candy = 2021  # a numbers of candies in the game.
 max_step = 28  # a maximum number to get candy once time.
 
 if __name__ == '__main__':
