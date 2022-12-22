@@ -10,10 +10,10 @@ y_point = int(input('Enter Y-coordinate: '))
 os.system('cls||clear')
 
 if x_point == 0 and y_point == 0:
-    breakpoint
+    exit(0)
 elif x_point > 0 and y_point > 0:
     print(f'- x={x_point}; y={y_point} -> 1')
-elif x_point < 0 and y_point > 0:
+elif x_point < 0 < y_point:
     print(f'- x={x_point}; y={y_point} -> 2')
 elif x_point < 0 and y_point < 0:
     print(f'- x={x_point}; y={y_point} -> 3')
