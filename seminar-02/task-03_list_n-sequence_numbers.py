@@ -9,14 +9,14 @@ def n_sequance(num: int) -> float:
 
 n = int(input('Enter a number "n" > 0: '))
 if n == 0:
-    breakpoint
+    exit(0)
 else:
     n_Dic = {}
-    summ = 0
+    res = 0
     
     for i in range(1, n + 1):
         n_Dic[i] = round(n_sequance(i), 2)
     
     for v in n_Dic.values():
-        summ += v
-    print(f'{n_Dic} Сумма {summ}')
+        res += v
+    print(f'{n_Dic} Сумма {res}')
