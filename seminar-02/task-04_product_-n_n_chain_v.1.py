@@ -14,7 +14,7 @@ for i in range(alt_n, n + 1):
     n_list.append(i)
 print(n_list)
 
-range_chain = input(f'Введите индексы элементов от {alt_n} до {n} через пробел -->')
+range_chain = input(f'Введите индексы элементов через пробел -->')
 range_chain = tuple(range_chain.split(' '))
 
 product = 1
