@@ -1,21 +1,22 @@
-# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-# Пример:
-# - 45 -> 101101
-# - 3 -> 11
-# - 2 -> 10
+""" Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+Пример:
+- 45 -> 101101
+- 3 -> 11
+- 2 -> 10 """
+
 
 def dec_to_bin(num: int) -> str:
-    'Convert integer number to binary.'
+    """Convert integer number to binary."""
     if num == 0:
         return 0
-    bin = ""
-    while (num > 0):
-        if (num % 2 == 0):
-            bin = "0" + bin
+    binary = ""
+    while num > 0:
+        if num % 2 == 0:
+            binary = "0" + binary
         else:
-            bin = "1" + bin
+            binary = "1" + binary
         num //= 2
-    return bin
+    return binary
 
 
 number = int(input('Enter a number: '))
