@@ -4,7 +4,7 @@
 # Fn = F(n+2)−F(n+1)
 
 def list_fibo(num: int) -> int:
-    'Numbers of the Fibonacchi.'
+    """Numbers of the Fibonacchi."""
     if num == 0:
         return 0
     elif num == 1:
@@ -13,7 +13,7 @@ def list_fibo(num: int) -> int:
 
 
 def list_nega_fibo(num: int) -> int:
-    'Numbers of the NegaFibonacchi.'
+    """Numbers of the NegaFibonacchi."""
     if num == 0:
         return 0
     if num == 1:
@@ -25,7 +25,7 @@ number = int(input('Enter a number: '))
 fib = [0]
 nega_fib = []
 count = 1
-while (count <= number):
+while count <= number:
     fib.append(list_fibo(count))
     nega_fib.append(list_nega_fibo(count))
     count += 1
