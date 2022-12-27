@@ -2,7 +2,7 @@
 # Пример:
 # [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-from random import randint
+from funcs import gen_rand_list
 
 
 def choice_list() -> list:
@@ -15,7 +15,7 @@ def choice_list() -> list:
             size_list = int(input('Enter a size of list: '))
             start_list = int(input('Enter a first number of list: '))
             stop_list = int(input('Enter a last number of list: '))
-            s_list = [randint(start_list, stop_list + 1) for item in range(size_list)]
+            s_list = gen_rand_list(start_list, stop_list, size_list)
     return s_list
 
 
