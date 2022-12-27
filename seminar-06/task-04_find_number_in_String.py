@@ -4,10 +4,11 @@
 ['efg23', '79234gefg'] """
 
 
-def sort_by_str(li: list, sub_string: str) -> list:
-    return [item for item in li if sub_string in item]
+def main():
+    source_li = ['efg23', '79234gefg', 'sdgs', 'g53']
+    sub_string = '2'
+    print([item for item in source_li if sub_string in item])
 
 
-list_1 = ['efg23', '79234gefg', 'sdgs', 'g53']
-find_string = '2'
-print(sort_by_str(list_1, find_string))
+if __name__ == "__main__":
+    main()
