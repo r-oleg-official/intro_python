@@ -19,12 +19,12 @@ def choice_list() -> list:
     return s_list
 
 
-user_list =choice_list()
+user_list = choice_list()
 uneven_elements = []
 
-sum = 0
+amount = 0
 for i in range(1, len(user_list), 2):
-    sum += user_list[i]
+    amount += user_list[i]
     uneven_elements.append(user_list[i])
 print(
     f'{user_list} -> на нечётных позициях элементы {uneven_elements}. Ответ: {sum}')
