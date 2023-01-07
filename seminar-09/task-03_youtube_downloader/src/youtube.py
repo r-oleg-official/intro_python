@@ -2,7 +2,7 @@ from pytube import YouTube
 from pytube.cli import on_progress
 
 
-def list_res(url) -> str:
+def list_res(url: str) -> str:
     yt = YouTube(url).streams
     result = ""
     resolution = ['2160p', '1440p', '1080p', '720p', '480p', '360p', '144p']
@@ -11,7 +11,7 @@ def list_res(url) -> str:
             k = yt.filter(res=i).desc().first().resolution[0:-1]
         except:
             k = None
-        if k != None:
+        if k is not None:
             result += k + ' '
     return result + 'audio'
 
@@ -35,48 +35,9 @@ def choice_res(url: str):
 
 # url = 'https://youtu.be/NsaouJxIbPA'
 url = input('Enter url: ')
-path = 'download'
-# path = user_input('path to download catalog: ')
+# path = 'download'
+path = input('Path to download catalog: ')
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
 res.download(path)
 video_best = yt.order_by('resolution').desc().first()
-
-exit()
-
-# Download v.1.
-# yt = pytube.YouTube(url)
-# yt.streams.order_by('resolution').desc()
-# yt = yt.streams[0].download()
-
-# Download v.2.
-# streams = pytube.YouTube(url).streams
-# video_best = yt.get_highest_resolution().download()
-# video = streams.order_by('resolution').desc()
-# video_480 = streams.filter(res='480p').desc().first()
-# audio_best = streams.filter(only_audio=True).desc().first()
-# video_best.download()
-# video.download()
-# video_480.download()
-# audio_best.download()
-
-# Download v.3.
-# streams = pytube.YouTube(url).streams
-# stream = streams.get_by_itag(input('Number track: '))
-# stream.download(path)
-
-# Download v.4.
-# yt = pytube.YouTube(url)
-# yt.streams.order_by('resolution').desc()
-# yt = yt.streams[0].download()
-
-# Download the best video before 720p.
-# video = streams.filter(progressive=True).desc().first()
-
-# Print number of the resolution
-# print(yt.filter(type='video').get_by_resolution(resolution='720p').resolution[0:-1]) # 720
-# yt.streams.filter(type='video').get_highest_resolution().resolution[0:-1] # print high resolution
-
-# Merge video and soundtrack for 1080 and high on Linux
-# ffmpeg -i video.mp4 -i audio.webm -map 0:v -map 1:a -c copy out.mkv
-# ffmpeg -i video.mp4 -i audio.webm -sctrict -2 -map 0:v -map 1:a -c copy out.mp4
