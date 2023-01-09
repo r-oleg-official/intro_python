@@ -9,7 +9,7 @@ def list_res(url: str) -> str:
     for i in resolution:
         try:
             k = yt.filter(res=i).desc().first().resolution[0:-1]
-        except:
+        except ValueError:
             k = None
         if k is not None:
             result += k + ' '
@@ -29,13 +29,13 @@ def choice_res(url: str):
                 return yt.filter(type='video').get_by_resolution(resolution='360p')
             case 'audio':
                 return yt.filter(only_audio=True).desc().first()
-            case 'exit':
+            case _:
                 return
 
 
-# url = 'https://youtu.be/NsaouJxIbPA'
+# url = "https://youtu.be/NsaouJxIbPA"
 url = input('Enter url: ')
-# path = 'download'
+# path = '../download'
 path = input('Path to download catalog: ')
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
