@@ -9,7 +9,7 @@ def list_res(url: str) -> str:
     for i in resolution:
         try:
             k = yt.filter(res=i).desc().first().resolution[0:-1]
-        except ValueError:
+        except AttributeError:
             k = None
         if k is not None:
             result += k + ' '
@@ -35,7 +35,7 @@ def choice_res(url: str):
 
 # url = "https://youtu.be/NsaouJxIbPA"
 url = input('Enter url: ')
-# path = '../download'
+# path = './download'
 path = input('Path to download catalog: ')
 yt = YouTube(url, on_progress_callback=on_progress).streams
 res = choice_res(url)
