@@ -161,4 +161,5 @@ FW:
 8. [python-telegram-bot.doc](https://docs.python-telegram-bot.org/en/v20.0a4/)
 9. [Matplotlib: Научная графика в Python](https://pythonworld.ru/novosti-mira-python/scientific-graphics-in-python.html)
 10. [CSV File Reading and Writing](https://docs.python.org/3/library/csv.html)
+11. [Поймай меня, если сможешь: руководство по обработке исключений в Python](https://habr.com/ru/companies/wunderfund/articles/736526/)
 

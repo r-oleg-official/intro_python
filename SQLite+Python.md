@@ -79,5 +79,6 @@ INSERT INTO phones (phone_number, type_id) VALUES (+79991112233, 3)
 5. [База данных SQLite в Python. Выборка, связь таблиц #2 | Базовый курс. Программирование на Python](https://www.youtube.com/watch?v=gm0p517EG7o&list=PLAMm2eUmBSn0oIY4MyyzGZY9ebtbZSHw0&index=30)
 6. [Изучение SQLite3 за 30 минут! Практика на основе языка Python](https://www.youtube.com/watch?v=bmQPy89IZNk)
 7. [методы fetchall, fetchmany, fetchone, iterdump](https://proproprogs.ru/modules/metody-fetchall-fetchmany-fetchone-iterdump)
+8. [Как подружить Python и базы данных SQL. Подробное руководство](https://proglib.io/p/kak-podruzhit-python-i-bazy-dannyh-sql-podrobnoe-rukovodstvo-2020-02-27)
 
 

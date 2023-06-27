@@ -12,3 +12,5 @@
 
 	pyuic5 main.ui -o main.py
 	
+## Sources
+1. [Создаём окружение для PyQt5 в Linux MInt (Ubuntu)](https://habr.com/ru/articles/248189/)
